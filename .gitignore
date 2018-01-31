@@ -1,0 +1,11 @@
+.stack-work/
+data.cabal
+*~
+
+*.sw*
+
+/tmp/*
+
+.DS_Store
+
+/*.sql
