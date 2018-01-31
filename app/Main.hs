@@ -1,6 +1,9 @@
 module Main where
 
-import Lib
+import HsGrep
+import System.Environment (getArgs)
 
 main :: IO ()
-main = someFunc
+main = do
+  (myRegex:filenames) <- getArgs
+  mapM_ (\filename -> hsGrep myRegex filename) filenames

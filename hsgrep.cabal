@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f236f6a65fed26b13f80ae1d0c9d094ac8b18b98f37f74641f7d553933affab8
+-- hash: 86e9dc6e92927d0dcbeeff349925666b598e0e2d9a31756cf88e19520ae86969
 
 name:           hsgrep
 version:        0.1.0.0
@@ -30,8 +30,9 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , regex-posix
   exposed-modules:
-      Lib
+      HsGrep
   other-modules:
       Paths_hsgrep
   default-language: Haskell2010
@@ -44,6 +45,7 @@ executable hsgrep-exe
   build-depends:
       base >=4.7 && <5
     , hsgrep
+    , regex-posix
   other-modules:
       Paths_hsgrep
   default-language: Haskell2010
@@ -57,6 +59,7 @@ test-suite hsgrep-test
   build-depends:
       base >=4.7 && <5
     , hsgrep
+    , regex-posix
   other-modules:
       Paths_hsgrep
   default-language: Haskell2010
