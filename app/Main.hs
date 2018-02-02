@@ -1,9 +1,12 @@
 module Main where
 
+import Glob
+import GlobRegex
 import HsGrep
 import System.Environment (getArgs)
 
 main :: IO ()
 main = do
-  (myRegex:filenames) <- getArgs
-  mapM_ (\filename -> hsGrep myRegex filename) filenames
+  (string:pattern:_) <- getArgs
+  print =<< namesMatching pattern
+  mapM_ (\filename -> hsGrep string filename) =<< namesMatching pattern

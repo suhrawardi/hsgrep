@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 86e9dc6e92927d0dcbeeff349925666b598e0e2d9a31756cf88e19520ae86969
+-- hash: 55df6c0d0eb67e262c10fa7d1da308cf67e6cbfc6eff68a43d4b05103bf09aab
 
 name:           hsgrep
 version:        0.1.0.0
@@ -30,8 +30,12 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , directory
+    , filepath
     , regex-posix
   exposed-modules:
+      Glob
+      GlobRegex
       HsGrep
   other-modules:
       Paths_hsgrep
@@ -44,6 +48,8 @@ executable hsgrep-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , directory
+    , filepath
     , hsgrep
     , regex-posix
   other-modules:
@@ -58,6 +64,8 @@ test-suite hsgrep-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , directory
+    , filepath
     , hsgrep
     , regex-posix
   other-modules:
