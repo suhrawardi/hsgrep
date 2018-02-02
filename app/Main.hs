@@ -8,5 +8,4 @@ import System.Environment (getArgs)
 main :: IO ()
 main = do
   (string:pattern:_) <- getArgs
-  print =<< namesMatching pattern
   mapM_ (\filename -> hsGrep string filename) =<< namesMatching pattern
